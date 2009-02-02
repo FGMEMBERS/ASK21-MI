@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+************************************************************************
+Ask 21 mi based on ask 21 by by Heiko Schulz
+************************************************************************
+-->
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <author>BARANGER Emmanuel</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+  
+    <startup>
+      <splash-texture>Aircraft/ASK21-MI/ask21mi-splash.png</splash-texture>
+    </startup>
+
+    <model>
+      <path archive="y">Aircraft/ASK21-MI/Models/ask21mi.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <sound>
+      <path>Aircraft/ASK21-MI/Sounds/ask21mi-sound.xml</path>
+    </sound>
+
+    <help>
+      <title>ASK 21 MI</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+      <key>
+        <name>D</name>
+        <desc>In/Out engine</desc>
+      </key>
+    </help>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic>
+        <int type="int" n="0">0</int>
+        <int type="int" n="1">0</int>
+        <int type="int" n="2">0</int>
+        <int type="int" n="3">0</int>
+        <int type="int" n="4">0</int>
+        <int type="int" n="5">0</int>
+      </generic>
+    </multiplay>
+
+    <systems>
+      <electrical>
+      <path></path>
+      </electrical>
+    </systems>
+
+    <hitches>
+      <!-- make sure some properties do exist, when the list for multiplayer transfere is defined-->
+      <!-- they need to be in the same value, as they are initilized in the FDM, to get the same values after reset should fix this somehow-->
+      <aerotow>
+        <tow>
+          <length type="float">60</length>
+          <elastic-constant type="float">10000</elastic-constant>
+          <weight-per-m-kg-m type="float">1</weight-per-m-kg-m>
+          <dist type="float">1</dist>
+          <connected-to-property-node type="bool"></connected-to-property-node>
+          <brake-force type="float">100000</brake-force>
+          <connected-to-ai-or-mp-callsign type ="string">*</connected-to-ai-or-mp-callsign>
+          <end-force-x type ="float">0</end-force-x>
+          <end-force-y type ="float">0</end-force-y>
+          <end-force-z type ="float">0</end-force-z>
+        </tow>
+        <speed-in-tow-direction type="float">0</speed-in-tow-direction>
+        <open type="bool">true</open>
+        <local-pos-x type="float">0</local-pos-x>
+        <local-pos-y type="float">0</local-pos-y>
+        <local-pos-z type="float">0</local-pos-z>
+        <is-slave type="bool">false</is-slave>
+      </aerotow>
+    </hitches>
+
+    <menubar include="Dialogs/ask21mi-menu.xml"/>
+
+  </sim>
+
+  <controls>
+    <winch>
+      <place type="bool">false</place>
+    </winch>
+    <aerotow>
+      <find-aircraft type="bool">false</find-aircraft>
+    </aerotow>
+  </controls>
+
+  <input>
+    <keyboard include="Nasal/ask21mi-keyboard.xml"/>
+  </input>
+ 
+  <nasal>
+    <ask21mi>
+      <file>Aircraft/ASK21-MI/Nasal/liveries.nas</file>
+      <file>Aircraft/ASK21-MI/Nasal/doors.nas</file>
+      <file>Aircraft/ASK21-MI/Nasal/light.nas</file>
+      <file>Aircraft/ASK21-MI/Nasal/immat.nas</file>
+    </ask21mi>
+  </nasal>
+
+</PropertyList>
