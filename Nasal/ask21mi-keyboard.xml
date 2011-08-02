@@ -7,7 +7,7 @@
     <desc>bay</desc>
     <binding>
       <command>nasal</command>
-      <script>ask21mi.doorsystem.passengerexport();</script>
+      <script>doors.doorsystem.passengerexport();</script>
     </binding>
   </key>
 
@@ -16,7 +16,7 @@
     <desc>Canopy</desc>
     <binding>
       <command>nasal</command>
-      <script>ask21mi.doorsystem.crewexport();</script>
+      <script>doors.doorsystem.crewexport();</script>
     </binding>
   </key>
 
