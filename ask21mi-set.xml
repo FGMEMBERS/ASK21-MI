@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <PropertyList include="ask21mi-jsbsim-cnf.xml"> -->
+<PropertyList include="ask21mi-yasim-cnf.xml">
+
+  <sim>
+  
+    <description>Schleicher ASK 21 mi</description>
+    <author>BARANGER Emmanuel</author>
+
+    <status>beta production</status>
+    <rating>
+     <FDM type="int">     2 </FDM>
+     <systems type="int"> 2 </systems>
+     <cockpit type="int"> 2 </cockpit>
+     <model type="int">   4 </model>
+    </rating>
+    
+  </sim>
+
+</PropertyList>
+
