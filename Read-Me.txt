@@ -35,6 +35,7 @@ BARANGER Emmanuel
 December, 31, 2008. 
 
 http://helijah.free.fr/flightgear/hangar.htm
+http://embaranger.free.fr
 embaranger@free.fr
 
 
@@ -71,7 +72,8 @@ Remerciements
 
 ===============
 BARANGER Emmanuel
-31 Dé©cembre 2008. 
+31 Décembre 2008. 
 
 http://helijah.free.fr/flightgear/hangar.htm
+http://embaranger.free.fr
 embaranger@free.fr

@@ -1,54 +1,84 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-
+  
   <path>panel1.ac</path>
-
+  
   <animation>
     <!-- Objets opaques -->
     <object-name>panel1</object-name>
- 
+    
     <!-- Objets transparents -->
   </animation>
-
-  <!-- vsi -->
+  
+  <!-- ASI -->
   <model>
-    <path>Aircraft/ASK21-MI/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
+    <path>Aircraft/ASK21-MI/Models/Interior/Panel/Instruments/vario-5stv5/vario-5stv5.xml</path>
     <offsets>
-      <x-m>  0.114 </x-m>
-      <y-m>  0.099 </y-m>
-      <z-m> -0.059 </z-m>
-      <roll-deg>    0.000 </roll-deg>
-      <pitch-deg>   0.000 </pitch-deg>
-      <heading-deg> 0.000 </heading-deg>
+      <x-m>  0.115 </x-m>
+      <y-m> -0.114 </y-m>
+      <z-m>  0.016 </z-m>
     </offsets>
   </model>
-
-  <!-- asi -->
+  
+  <!-- ASI -->
   <model>
     <path>Aircraft/ASK21-MI/Models/Interior/Panel/Instruments/asi/asi.xml</path>
     <offsets>
-      <x-m>  0.114 </x-m>
-      <y-m> -0.099 </y-m>
-      <z-m>  0.030 </z-m>
-      <roll-deg>    0.000 </roll-deg>
-      <pitch-deg>   0.000 </pitch-deg>
-      <heading-deg> 0.000 </heading-deg>
+      <x-m> 0.115 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.016 </z-m>
     </offsets>
   </model>
-
-  <!-- alt -->
+  
+  <!-- ALTIMETER -->
   <model>
     <path>Aircraft/ASK21-MI/Models/Interior/Panel/Instruments/alt/alt.xml</path>
     <offsets>
-      <x-m> 0.114 </x-m>
-      <y-m> 0.099 </y-m>
-      <z-m> 0.030 </z-m>
-      <roll-deg>    0.000 </roll-deg>
-      <pitch-deg>   0.000 </pitch-deg>
-      <heading-deg> 0.000 </heading-deg>
+      <x-m> 0.115 </x-m>
+      <y-m> 0.114 </y-m>
+      <z-m> 0.016 </z-m>
     </offsets>
   </model>
-
+  
+  <!-- TURN -->
+  <model>
+    <path>Aircraft/ASK21-MI/Models/Interior/Panel/Instruments/turn/turn.xml</path>
+    <offsets>
+      <x-m>  0.115 </x-m>
+      <y-m> -0.191 </y-m>
+      <z-m> -0.089 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- CHRONOMETER -->
+  <model>
+    <path>Aircraft/ASK21-MI/Models/Interior/Panel/Instruments/chrono/chronometer.xml</path>
+    <offsets>
+      <x-m>  0.113 </x-m>
+      <y-m> -0.092 </y-m>
+      <z-m> -0.085 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- VARIO -->
+  <model>
+    <path>Aircraft/ASK21-MI/Models/Interior/Panel/Instruments/vario/ilec-sc7.xml</path>
+    <offsets>
+      <x-m>  0.115 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.116 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- COMPASS -->
+  <model>
+    <path>Aircraft/ASK21-MI/Models/Interior/Panel/Instruments/compass/compass.xml</path>
+    <offsets>
+      <x-m>  0.115 </x-m>
+      <y-m>  0.180 </y-m>
+      <z-m> -0.089 </z-m>
+    </offsets>
+  </model>
+  
 </PropertyList>
-

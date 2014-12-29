@@ -1,14 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!-- <PropertyList include="ask21mi-jsbsim-cnf.xml"> -->
-<PropertyList include="ask21mi-yasim-cnf.xml">
+<PropertyList include="ask21mi-base.xml">
 
   <sim>
   
-    <description>Schleicher ASK 21 mi</description>
+    <description>Schleicher ASK 21 mi (YASim)</description>
     <author>BARANGER Emmanuel</author>
-
+    <aircraft-version>0.2</aircraft-version>
     <status>beta production</status>
+    
+    <flight-model>yasim</flight-model>
+    <aero>ask21mi-yasim</aero>
+    
     <rating>
      <FDM type="int">     2 </FDM>
      <systems type="int"> 2 </systems>
@@ -19,4 +22,3 @@
   </sim>
 
 </PropertyList>
-
