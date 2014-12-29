@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<airplane mass="720">
+<airplane mass="720" version="YASIM_VERSION_CURRENT">
 
   <!-- Approach configuration -->
   <approach speed="30" aoa="5" glide-angle="4">
@@ -45,7 +45,7 @@
 
   <hstab x="-3.656" y="0.0" z="0.813"
          chord="0.792"
-	 length="1.554"
+         length="1.554"
          taper="0.56"> 
          <stall aoa="26" width="16" peak="1.5"/>
          <flap0 start="0.0" end="0.89" lift="1.6" drag="1.3"/>
@@ -58,7 +58,7 @@
 
   <vstab x="-3.601" y="0" z="-0.444"
          chord="1.185"
-	 length="1.255"
+         length="1.255"
          taper="0.64">
          <stall aoa="24" width="14" peak="1.5"/>
          <flap0 start="0" end="0.88" lift="1.6" drag="1.3"/>
@@ -70,24 +70,25 @@
   </vstab>
 
   <propeller x="0.293" y="0.0" z="0.584" 
-	     mass="80" 
-	     moment="2.25"
-	     radius="0.625"
-	     cruise-speed="117"
-	     cruise-rpm="3000"
-	     cruise-alt="5000" 
-	     cruise-power="50"
-	     takeoff-power="56" 
-	     takeoff-rpm="3400">
-             <piston-engine eng-rpm="3400" 
-	                    eng-power="56"
-	                    displacement="152" 
-	                    compression="8.5"/>
+             mass="80" 
+             moment="2.25"
+             radius="0.625"
+             cruise-speed="117"
+             cruise-rpm="3000"
+             cruise-alt="5000" 
+             cruise-power="50"
+             takeoff-power="56" 
+             takeoff-rpm="3400">
              <actionpt x="0.388" y="0.0" z="0.716"/>
-             <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle" />
-             <control-input control="STARTER" axis="/controls/engines/engine[0]/starter" />
-             <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos" />
-             <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture" />
+             <piston-engine eng-rpm="3400" 
+                            eng-power="56"
+                            displacement="152" 
+                            compression="8.5">
+                            <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle" />
+                            <control-input control="STARTER" axis="/controls/engines/engine[0]/starter" />
+                            <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos" />
+                            <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture" />
+             </piston-engine>
   </propeller>
   
   <!-- nose wheel -->
@@ -103,29 +104,53 @@
   <gear x="0.975" y="0" z="-1.034"
         compression="0.1"
         spring="1"
-        damp="1"
-        dfric="0.14"
-        sfric ="0.16">
-        <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+        damp="2" 
+        dfric="0.2"
+        sfric ="0.24">
+    <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
   </gear>
 
   <!-- Tail wheel -->
   <gear x="-3.585" y="0" z="-0.573"
         compression="0.1"
+        spring="1"
+        damp="2" 
         dfric="0.2"
-        sfric ="0.24"
-        damp="2"
-        skid="1">
-  </gear>
+        sfric ="0.24">
+    </gear>
 
   <!--lef wing skid-->
-  <gear x="1.386" y="8.482" z="0.068" skid="1" compression="0.10" spring="0.8" sfric="0.5" dfric="0.4"/>
-  <gear x="1.094" y="8.478" z="0.068" skid="1" compression="0.10" spring="0.8" sfric="0.5" dfric="0.4"/>
+  <gear x="1.386" y="8.482" z="0.068"
+        compression="0.1"
+        spring="1.8"
+        damp="0.03" 
+        on-solid="1">
+  </gear>
+  
+  <gear x="1.094" y="8.478" z="0.068"
+        compression="0.10"
+        spring="1.8"
+        damp="0.03" 
+        on-solid="1">
+  </gear>
 
   <!--right wing skid-->
-  <gear x="1.386" y="-8.482" z="0.068" skid="1" compression="0.10" spring="0.8" sfric="0.5" dfric="0.4"/>
-  <gear x="1.094" y="-8.478" z="0.068" skid="1" compression="0.10" spring="0.8" sfric="0.5" dfric="0.4"/>
+  <gear x="1.386" y="-8.482" z="0.068"
+        skid="1"
+        compression="0.10"
+        spring="1.8"
+        damp="0.03" 
+        on-solid="1">
+  </gear>
+  
+  <gear x="1.094" y="-8.478" z="0.068"
+        skid="1"
+        compression="0.10"
+        spring="1.8"
+        damp="0.03" 
+        on-solid="1">
+  </gear>
 
   <!-- pilots -->
   <ballast x="2.687" y="0" z="-0.400" mass="140"/>
@@ -148,7 +173,7 @@
   <!-- Réservoir de 26 litres de carburant -->
   <tank x="0" y="0" z="0" capacity="40.20"/>
 
-  <!-- CG théorique x=0.824 y=0 z=-0.322 -->
+  <!-- Mass displacement -->
   <ballast x="-0.844" y="0" z="-0.9" mass="200"/>
 
 </airplane>

@@ -8,40 +8,55 @@
     <!-- Objets opaques -->
     <object-name>interieur</object-name>
     <object-name>interieur2</object-name>
-    <object-name>tour</object-name>
-    <object-name>tour2</object-name>
-
+    <object-name>inttour</object-name>
+    <object-name>inttour2</object-name>
+    <object-name>planchet</object-name>
+    
+    <object-name>yoke</object-name>
+    <object-name>flaps</object-name>
+    <object-name>knob</object-name>
+    
     <!-- Objets transparents -->
     <object-name>intvitreA</object-name>
     <object-name>intvitreB</object-name>
   </animation>
 
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/ASK21-MI/Models/Effects/Glass/glass</inherits-from>
     <object-name>intvitreA</object-name>
     <object-name>intvitreB</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
+  </effect>
+  
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
     <object-name>intvitreA</object-name>
     <object-name>intvitreB</object-name>
-  </animation>
-
-  <!-- Pilote
+  </effect>
+  
+  <!-- Yaw String -->
   <model>
-    <path>Aircraft/B-17/Models/Pilot/pilot.xml</path>
+    <name>yawstring</name>
+    <path>Aircraft/ASK21-MI/Models/Interior/Panel/Instruments/yawstring/yawstring.xml</path>
     <offsets>
-      <x-m> -7.728 </x-m>
-      <y-m> -0.292 </y-m>
-      <z-m>  0.485 </z-m>
-      <roll-deg>    0.0 </roll-deg>
-      <pitch-deg>   0.0 </pitch-deg>
-      <heading-deg> 0.0 </heading-deg>
+      <x-m> -3.170 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.172 </z-m>
+      <pitch-deg> -15 </pitch-deg>
     </offsets>
-  </model> -->
+  </model>
+  
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/ASK21-MI/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -2.85451 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.52084 </z-m>
+      <pitch-deg> 4 </pitch-deg>
+    </offsets>
+  </model>
 
   <!-- Planche de bord avant -->
   <model>
@@ -51,9 +66,7 @@
       <x-m> -3.437 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -0.375 </z-m>
-      <roll-deg>     0 </roll-deg>
       <pitch-deg>   -4 </pitch-deg>
-      <heading-deg>  0 </heading-deg>
     </offsets>
   </model>
 
@@ -64,9 +77,7 @@
       <x-m> -3.437 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -0.375 </z-m>
-      <roll-deg>     0 </roll-deg>
       <pitch-deg>   -4 </pitch-deg>
-      <heading-deg>  0 </heading-deg>
     </offsets>
   </model>
 
@@ -77,9 +88,7 @@
       <x-m> -2.197 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -0.278 </z-m>
-      <roll-deg>      0 </roll-deg>
       <pitch-deg>   -10 </pitch-deg>
-      <heading-deg>   0 </heading-deg>
     </offsets>
   </model>
 
@@ -88,12 +97,26 @@
     <name>CanopyA</name>
     <object-name>Panel</object-name>
     <object-name>intvitreA</object-name>
+    <object-name>yawstring</object-name>
   </animation>
 
   <animation>
+    <type>pick</type>
+    <object-name>CanopyA</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>  
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
     <type>rotate</type>
     <object-name>CanopyA</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <factor> -50 </factor>
     <center>
       <x-m> -3.477 </x-m>
@@ -108,9 +131,22 @@
   </animation>
 
   <animation>
+    <type>pick</type>
+    <object-name>intvitreB</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>  
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
     <type>rotate</type>
     <object-name>intvitreB</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <factor> 50 </factor>
     <center>
       <x-m> -1.318 </x-m>
@@ -125,4 +161,3 @@
   </animation>
 
 </PropertyList>
-
