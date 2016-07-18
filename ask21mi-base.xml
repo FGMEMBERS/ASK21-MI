@@ -38,7 +38,7 @@ Ask 21 mi based on ask 21 by by Heiko Schulz
         <int   n="3"  type="int">  0 </int>                                         <!-- 3 immat -->
         <int   n="4"  type="int">  0 </int>                                         <!-- 4 immat -->
         <int   n="5"  type="int">  0 </int>                                         <!-- 5 immat -->
-        <int   n="6"  type="bool"> 1 </int>                                         <!-- 6 -->
+        <int   n="6"  type="bool"> 1 </int>     
         <int   n="7"  alias="/controls/switches/smoke"> 0   </int>                  <!-- 7 smoke -->
         <int   n="8"  alias="/systems/electrical/outputs/nav-lights">  0 </int>     <!-- 8 nav-lights -->
         <int   n="9"  alias="/sim/model/lights/beacon/state">  false </int>         <!-- 9 strobe-lights -->
