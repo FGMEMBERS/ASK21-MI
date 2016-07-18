@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>ask21mi.ac</path>
+
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/ASK21-MI/Models/Liveries", 10);
+
+      var self = cmdarg();
+
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+      
+      var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
+      var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
+      
+      crew_door.alias(float_0);
+      passenger_door.alias(float_1);
+    </load>
+
+    <unload>
+      livery_update.stop();
+      crew_door.unalias();
+      passenger_door.unalias();
+    </unload>
+  </nasal>
+
+  <animation>
+    <object-name>fuselage</object-name>
+    <object-name>ailesL2</object-name>
+    <object-name>ailesL1</object-name>
+    <object-name>ailesL0</object-name>
+    <object-name>ailes</object-name>
+    <object-name>ailesR0</object-name>
+    <object-name>ailesR1</object-name>
+    <object-name>ailesR2</object-name>
+    <object-name>porteG</object-name>
+    <object-name>porteD</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>spoilerG</object-name>
+    <object-name>spoilerD</object-name>
+    <object-name>derive</object-name>
+    <object-name>direction</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>moteur</object-name>
+    <object-name>helice</object-name>
+    <object-name>helicefixe</object-name>
+    <object-name>tourvitreA</object-name>
+    <object-name>tourvitreB</object-name>
+
+    <object-name>introues</object-name>
+    <object-name>trousspoilerG</object-name>
+    <object-name>trousaileronG</object-name>
+    <object-name>trousspoilerD</object-name>
+    <object-name>trousaileronD</object-name>
+    <object-name>roueA</object-name>
+    <object-name>roueC</object-name>
+    <object-name>roueB</object-name>
+
+    <!-- Transparence -->
+    <object-name>vitreA</object-name>
+    <object-name>vitreB</object-name>
+    <object-name>propblur</object-name>
+    <object-name>propdisc</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>fuselage</object-name>
+    <object-name>ailesL2</object-name>
+    <object-name>ailesL1</object-name>
+    <object-name>ailesL0</object-name>
+    <object-name>ailes</object-name>
+    <object-name>ailesR0</object-name>
+    <object-name>ailesR1</object-name>
+    <object-name>ailesR2</object-name>
+    <object-name>porteG</object-name>
+    <object-name>porteD</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>spoilerG</object-name>
+    <object-name>spoilerD</object-name>
+    <object-name>derive</object-name>
+    <object-name>direction</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>moteur</object-name>
+    <object-name>helice</object-name>
+    <object-name>helicefixe</object-name>
+    <object-name>tourvitreA</object-name>
+    <object-name>tourvitreB</object-name>
+
+    <object-name>introues</object-name>
+    <object-name>trousspoilerG</object-name>
+    <object-name>trousaileronG</object-name>
+    <object-name>trousspoilerD</object-name>
+    <object-name>trousaileronD</object-name>
+    <object-name>roueA</object-name>
+    <object-name>roueC</object-name>
+    <object-name>roueB</object-name>
+
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>ailesL2</object-name>
+    <object-name>ailesL1</object-name>
+    <object-name>ailesL0</object-name>
+    <object-name>ailes</object-name>
+    <object-name>ailesR0</object-name>
+    <object-name>ailesR1</object-name>
+    <object-name>ailesR2</object-name>
+    <object-name>porteG</object-name>
+    <object-name>porteD</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>spoilerG</object-name>
+    <object-name>spoilerD</object-name>
+    <object-name>derive</object-name>
+    <object-name>direction</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>moteur</object-name>
+    <object-name>helice</object-name>
+    <object-name>helicefixe</object-name>
+    <object-name>tourvitreA</object-name>
+    <object-name>tourvitreB</object-name>
+  </effect>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/ASK21-MI/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitreA</object-name>
+    <object-name>vitreB</object-name>
+  </effect>
+  
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>vitreA</object-name>
+    <object-name>vitreB</object-name>
+    <object-name>propblur</object-name>
+    <object-name>propdisc</object-name>
+  </effect>
+  
+  <!-- Intérieur -->
+  <model>
+    <usage>interior</usage>
+    <path>Aircraft/ASK21-MI/Models/Interior/interior.xml</path>
+  </model>
+
+  <!-- Immatriculation -->
+  <model>
+    <path>Aircraft/ASK21-MI/Models/Immat/immat.xml</path>
+  </model>
+  <!--Smoke Effect-->
+  <model>
+    <path>Effects/Smoke/smoke.xml</path>
+    <offsets>
+      <x-m> -1.32818 </x-m>
+      <y-m>  -8.42088 </y-m>
+      <z-m> 0.1541 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+  <model>
+    <path>Effects/Smoke/smoke.xml</path>
+    <offsets>
+      <x-m> -1.32818 </x-m>
+      <y-m>  8.42088 </y-m>
+      <z-m> 0.1541 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  
+  <!-- Cranking effects -->
+  <model>
+    <path>Aircraft/ASK21-MI/Models/Effects/cranking/cranking.xml</path>
+    <condition>
+      <equals>
+        <property>sim/model/door-positions/passenger/position-norm</property>
+        <value>1</value>
+      </equals>
+    </condition>
+    <center>
+      <x-m> -0.280 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.564 </z-m>
+    </center>
+  </model>
+  
+  <!-- Effets sur le sol -->
+  <!-- Roue avant -->
+  <model>
+    <path>Aircraft/ASK21-MI/Models/Effects/ground/ground0.xml</path>
+    <offsets>
+      <x-m> -3.23529 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.96514 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Roue gauche -->
+  <model>
+    <path>Aircraft/ASK21-MI/Models/Effects/ground/ground1.xml</path>
+    <offsets>
+      <x-m> -0.97546 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -1.03384 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Roue droite -->
+  <model>
+    <path>Aircraft/ASK21-MI/Models/Effects/ground/ground2.xml</path>   
+    <offsets>
+      <x-m>  3.58455 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.57327 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Flexions des ailes -->
+  <!-- Left -->
+  <animation>
+    <type>rotate</type>
+    <object-name>ailesL0</object-name>      
+    <object-name>ailesL1</object-name>      
+    <object-name>ailesL2</object-name>
+    <object-name>trousspoilerG</object-name>
+    <object-name>spoilerG</object-name>
+    <object-name>trousaileronG</object-name>
+    <object-name>aileronG</object-name>      
+    <property>sim/multiplay/generic/float[12]</property>
+    <interpolation>
+      <entry><ind> 0.000 </ind><dep>  1 </dep></entry>
+      <entry><ind> 0.333 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1.000 </ind><dep> -1 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -1.59232 </x1-m>
+      <y1-m> -0.32873 </y1-m>
+      <z1-m> -0.35174 </z1-m>
+      <x2-m> -0.04293 </x2-m>
+      <y2-m> -0.32873 </y2-m>
+      <z2-m> -0.42119 </z2-m>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>ailesL1</object-name>      
+    <object-name>ailesL2</object-name>
+    <object-name>trousspoilerG</object-name>
+    <object-name>spoilerG</object-name>      
+    <object-name>trousaileronG</object-name>
+    <object-name>aileronG</object-name>      
+    <property>sim/multiplay/generic/float[12]</property>
+    <interpolation>
+      <entry><ind> 0.000 </ind><dep>  1.5 </dep></entry>
+      <entry><ind> 0.333 </ind><dep>  0.0 </dep></entry>
+      <entry><ind> 1.000 </ind><dep> -1.5 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -1.58594 </x1-m>
+      <y1-m> -2.62636 </y1-m>
+      <z1-m> -0.20388 </z1-m>
+      <x2-m> -0.33016 </x2-m>
+      <y2-m> -2.62636 </y2-m>
+      <z2-m> -0.25948 </z2-m>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>ailesL2</object-name>      
+    <object-name>trousaileronG</object-name>
+    <object-name>aileronG</object-name>      
+    <property>sim/multiplay/generic/float[12]</property>
+    <interpolation>
+      <entry><ind> 0.000 </ind><dep>  2 </dep></entry>
+      <entry><ind> 0.333 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1.000 </ind><dep> -2 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -1.57885 </x1-m>
+      <y1-m> -5.17629 </y1-m>
+      <z1-m> -0.03972 </z1-m>
+      <x2-m> -0.64893 </x2-m>
+      <y2-m> -5.17629 </y2-m>
+      <z2-m> -0.08000 </z2-m>
+    </axis>
+  </animation>
+  
+  <!-- Right -->
+  <animation>
+    <type>rotate</type>
+    <object-name>ailesR0</object-name>      
+    <object-name>ailesR1</object-name>      
+    <object-name>ailesR2</object-name>      
+    <object-name>trousspoilerD</object-name>
+    <object-name>spoilerD</object-name>      
+    <object-name>trousaileronD</object-name>
+    <object-name>aileronD</object-name>      
+    <property>sim/multiplay/generic/float[12]</property>
+    <interpolation>
+      <entry><ind> 0.000 </ind><dep>  1 </dep></entry>
+      <entry><ind> 0.333 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1.000 </ind><dep> -1 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -0.04293 </x1-m>
+      <y1-m>  0.32873 </y1-m>
+      <z1-m> -0.42119 </z1-m>
+      <x2-m> -1.59232 </x2-m>
+      <y2-m>  0.32873 </y2-m>
+      <z2-m> -0.35174 </z2-m>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>ailesR1</object-name>      
+    <object-name>ailesR2</object-name>      
+    <object-name>trousspoilerD</object-name>
+    <object-name>spoilerD</object-name>      
+    <object-name>trousaileronD</object-name>
+    <object-name>aileronD</object-name>      
+    <property>sim/multiplay/generic/float[12]</property>
+    <interpolation>
+      <entry><ind> 0.000 </ind><dep>  1.5 </dep></entry>
+      <entry><ind> 0.333 </ind><dep>  0.0 </dep></entry>
+      <entry><ind> 1.000 </ind><dep> -1.5 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -0.33016 </x1-m>
+      <y1-m>  2.62636 </y1-m>
+      <z1-m> -0.25948 </z1-m>
+      <x2-m> -1.58594 </x2-m>
+      <y2-m>  2.62636 </y2-m>
+      <z2-m> -0.20388 </z2-m>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>ailesR2</object-name>      
+    <object-name>trousaileronD</object-name>
+    <object-name>aileronD</object-name>      
+    <property>sim/multiplay/generic/float[12]</property>
+    <interpolation>
+      <entry><ind> 0.000 </ind><dep>  2 </dep></entry>
+      <entry><ind> 0.333 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1.000 </ind><dep> -2 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -0.64893 </x1-m>
+      <y1-m>  5.17629 </y1-m>
+      <z1-m> -0.08000 </z1-m>
+      <x2-m> -1.57885 </x2-m>
+      <y2-m>  5.17629 </y2-m>
+      <z2-m> -0.03972 </z2-m>
+    </axis>
+  </animation>
+  
+  <!-- Les ailerons -->
+  <animation>
+    <type>rotate</type>
+    <object-name>aileronG</object-name>      
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <factor> 24 </factor>
+    <axis>
+      <x1-m> -1.166 </x1-m>
+      <y1-m> -7.961 </y1-m>
+      <z1-m>  0.132 </z1-m>
+      <x2-m> -0.844 </x2-m>
+      <y2-m> -5.176 </y2-m>
+      <z2-m> -0.061 </z2-m>
+    </axis>
+  </animation>
+ 
+  <animation>
+    <type>rotate</type>
+    <object-name>aileronD</object-name>      
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <factor> 24 </factor>
+    <axis>
+      <x1-m> -0.844 </x1-m>
+      <y1-m>  5.176 </y1-m>
+      <z1-m> -0.061 </z1-m>
+      <x2-m> -1.166 </x2-m>
+      <y2-m>  7.961 </y2-m>
+      <z2-m>  0.132 </z2-m>
+    </axis>
+  </animation>
+ 
+  <!-- Aérofreins -->
+  <animation>
+    <type>rotate</type>
+    <object-name>spoilerG</object-name>
+    <property>surface-positions/speedbrake-pos-norm</property>
+    <factor> 50 </factor>
+    <axis>
+      <x1-m> -1.142 </x1-m>
+      <y1-m> -2.734 </y1-m>
+      <z1-m> -0.077 </z1-m>
+      <x2-m> -1.202 </x2-m>
+      <y2-m> -4.161 </y2-m>
+      <z2-m> -0.004 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>spoilerD</object-name>
+    <property>surface-positions/speedbrake-pos-norm</property>
+    <factor> 50 </factor>
+    <axis>
+      <x1-m> -1.202 </x1-m>
+      <y1-m>  4.161 </y1-m>
+      <z1-m> -0.004 </z1-m>
+      <x2-m> -1.142 </x2-m>
+      <y2-m>  2.734 </y2-m>
+      <z2-m> -0.077 </z2-m>
+    </axis>
+  </animation>
+
+  <!-- Profondeur -->
+  <animation>
+    <type>rotate</type>
+    <object-name>profondeur</object-name>      
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor> 24 </factor>  
+    <center>
+      <x-m> 3.816 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.812 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>  
+
+  <!-- Direction -->
+  <animation>
+    <type>rotate</type>
+    <object-name>direction</object-name>      
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> 24 </factor>
+    <axis>
+      <x1-m> 3.807 </x1-m>
+      <y1-m> 0.000 </y1-m>
+      <z1-m> 0.295 </z1-m>
+      <x2-m> 3.892 </x2-m>
+      <y2-m> 0.000 </y2-m>
+      <z2-m> 0.788 </z2-m>
+    </axis>
+  </animation>
+ 
+  <!-- Rotation des roues lors du roulage -->
+  <animation>
+    <type>spin</type>
+    <object-name>roueA</object-name>
+    <property>gear/gear[0]/rollspeed-ms</property>
+    <factor> 30 </factor>
+    <center>
+      <x-m> -3.235 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.845 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>roueC</object-name>
+    <property>gear/gear[1]/rollspeed-ms</property>
+    <factor> 30 </factor>
+    <center>
+      <x-m> -0.975 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.876 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>roueB</object-name>
+    <property>gear/gear[2]/rollspeed-ms</property>
+    <factor> 30 </factor>
+    <center>
+      <x-m>  3.585 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.519 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <!-- Canopy -->
+  <animation>
+    <name>TotaleVitreA</name>
+    <object-name>vitreA</object-name>
+    <object-name>tourvitreA</object-name>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>TotaleVitreA</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>  
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>TotaleVitreA</object-name>
+    <property>sim/model/door-positions/crew/position-norm</property>
+    <factor> -50 </factor>
+    <center>
+      <x-m> -3.477 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.258 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>TotaleVitreB</name>
+    <object-name>vitreB</object-name>
+    <object-name>tourvitreB</object-name>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>TotaleVitreB</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>  
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>TotaleVitreB</object-name>
+    <property>sim/model/door-positions/crew/position-norm</property>
+    <factor> 50 </factor>
+    <center>
+      <x-m> -1.318 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.043 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Portes du moteur -->
+  <animation>
+    <type>rotate</type>
+    <object-name>porteG</object-name>      
+    <property>sim/model/door-positions/passenger/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 0.2 </ind><dep> 95 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> 95 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -0.402 </x1-m>
+      <y1-m> -0.187 </y1-m>
+      <z1-m> -0.121 </z1-m>
+      <x2-m>  1.316 </x2-m>
+      <y2-m> -0.154 </y2-m>
+      <z2-m> -0.239 </z2-m>
+    </axis>
+  </animation>
+ 
+  <animation>
+    <type>rotate</type>
+    <object-name>porteD</object-name>      
+    <property>sim/model/door-positions/passenger/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 0.2 </ind><dep> 95 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> 95 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m>  1.316 </x1-m>
+      <y1-m>  0.154 </y1-m>
+      <z1-m> -0.239 </z1-m>
+      <x2-m> -0.402 </x2-m>
+      <y2-m>  0.187 </y2-m>
+      <z2-m> -0.121 </z2-m>
+    </axis>
+  </animation>
+ 
+  <!-- Le moteur -->
+  <animation>
+    <name>EnsembleMoteur</name>
+    <object-name>moteur</object-name>      
+    <object-name>helice</object-name>      
+    <object-name>helicefixe</object-name>      
+    <object-name>propblur</object-name>
+    <object-name>propdisc</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>EnsembleMoteur</object-name>      
+    <property>sim/model/door-positions/passenger/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 95 </dep></entry>
+      <entry><ind> 1 </ind><dep>  0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -0.307 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.266 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+ 
+  <!-- Animation de l'hélice -->
+  <animation>
+    <name>HeliceComplete</name>
+    <object-name>helice</object-name>
+    <object-name>propdisc</object-name>
+    <object-name>propblur</object-name>
+  </animation>
+
+  <!-- Séléction de l'objet visible en fonction des rpm -->
+  <animation>
+    <type>select</type>
+    <object-name>propdisc</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value>1500</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>propblur</object-name>
+    <condition>
+    <and>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value>600.000</value>
+      </greater-than>
+      <less-than>
+        <property>engines/engine[0]/rpm</property>
+        <value>1500.001</value>
+      </less-than>
+    </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>helice</object-name>
+    <condition>
+      <less-than>
+        <property>engines/engine[0]/rpm</property>
+        <value>1500</value>
+      </less-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>HeliceComplete</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
+    <property>engines/engine[0]/rpm</property>
+    <factor> 1 </factor>
+    <axis>
+      <x1-m> -0.331 </x1-m>
+      <y1-m>  0.000 </y1-m>
+      <z1-m>  0.714 </z1-m>
+      <x2-m> -0.423 </x2-m>
+      <y2-m>  0.000 </y2-m>
+      <z2-m>  0.717 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>helicefixe</object-name>      
+    <condition>
+      <less-than>
+        <property>sim/model/door-positions/passenger/position-norm</property>
+        <value>1</value>
+      </less-than>
+    </condition>
+  </animation>
+ 
+  <animation>
+    <name>HeliceAnime</name>
+    <object-name>helice</object-name>
+    <object-name>propdisc</object-name>
+    <object-name>propblur</object-name>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>HeliceAnime</object-name>      
+    <condition>
+      <equals>
+        <property>sim/model/door-positions/passenger/position-norm</property>
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+ 
+</PropertyList>
