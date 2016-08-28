@@ -145,8 +145,8 @@ var createDragRobot = func {
   # local variables
   var ac_pos = geo.aircraft_position();                      # get position of aircraft
   var ac_hd  = getprop("orientation/heading-deg");           # get heading of aircraft
-  var dip    = ac_pos.apply_course_distance( ac_hd , 15);    # initial dragger position, 
-                                                             # 15m in front of glider
+  var dip    = ac_pos.apply_course_distance( ac_hd , 25);    # initial dragger position, 
+                                                             # 25m in front of glider
   var dipalt_m = geo.elevation(dip.lat(), dip.lon());        # height at dragger position
   var wp0_geo = geo.Coord.new();                             # current processed ai-plane
   

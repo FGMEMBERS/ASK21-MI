@@ -4,6 +4,11 @@
 
   <path>ask21mi.ac</path>
 
+  <!-- MP sound call -->
+  <sound>
+    <path>Aircraft/ASK21-MI/Sounds/mp-sound.xml</path>
+  </sound>
+  
   <nasal>
     <load>
       var livery_update = aircraft.livery_update.new("Aircraft/ASK21-MI/Models/Liveries", 10);
@@ -153,9 +158,18 @@
     <object-name>propdisc</object-name>
   </effect>
   
+  <!-- Shadow -->
+  <model>
+    <path>Aircraft/ASK21-MI/Models/shadow.xml</path>
+    <offsets>
+      <x-m>  0.0 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m> -0.9 </z-m>
+    </offsets>
+  </model>
+  
   <!-- Intérieur -->
   <model>
-    <usage>interior</usage>
     <path>Aircraft/ASK21-MI/Models/Interior/interior.xml</path>
   </model>
 
