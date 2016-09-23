@@ -23,13 +23,6 @@
 
   <!-- working for Rembrandt -->
   <effect>
-    <inherits-from>Aircraft/ASK21-MI/Models/Effects/Glass/glass</inherits-from>
-    <object-name>intvitreA</object-name>
-    <object-name>intvitreB</object-name>
-  </effect>
-  
-  <!-- working for Rembrandt -->
-  <effect>
     <inherits-from>Effects/model-transparent</inherits-from>
     <object-name>intvitreA</object-name>
     <object-name>intvitreB</object-name>
@@ -37,7 +30,6 @@
   
   <!-- Yaw String -->
   <model>
-    <name>yawstring</name>
     <path>Aircraft/ASK21-MI/Models/Interior/Panel/Instruments/yawstring/yawstring.xml</path>
     <offsets>
       <x-m> -3.170 </x-m>

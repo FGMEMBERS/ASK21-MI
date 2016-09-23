@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!--
-************************************************************************
-Ask 21 mi based on ask 21 by by Heiko Schulz
-************************************************************************
--->
+<!-- ********************************************
+     Ask 21 mi based on ask 21 by by Heiko Schulz
+     ******************************************** -->
 <PropertyList>
   
-  <sim include="Systems/views.xml">
-    
-    <description>Schleicher ASK 21 mi (YASim)</description>
-    <author>BARANGER Emmanuel</author>
-    <aircraft-version>0.2</aircraft-version>
-    <status>beta production</status>
+  <sim include="views.xml">
     
     <startup>
       <splash-texture>Aircraft/ASK21-MI/ask21mi-splash.png</splash-texture>
@@ -28,6 +21,10 @@ Ask 21 mi based on ask 21 by by Heiko Schulz
     <sound>
       <path>Aircraft/ASK21-MI/Sounds/ask21mi-sound.xml</path>
     </sound>
+    
+    <ai>
+      <scenario>thermal_demo</scenario>
+    </ai>
     
     <multiplay>
       <chat_display>1</chat_display>
@@ -61,54 +58,19 @@ Ask 21 mi based on ask 21 by by Heiko Schulz
       </generic>
     </multiplay>
     
-    <systems>
-      <electrical>
-        <path></path>
-      </electrical>
-    </systems>
+    <systems include="systems.xml"/>
     
-    <hitches>
-      <!-- make sure some properties do exist, when the list for multiplayer transfere is defined
-      they need to be in the same value, as they are initilized in the FDM, to get the same 
-      values after reset should fix this somehow-->
-      <aerotow>
-        <tow>
-          <length type="float">60</length>
-          <elastic-constant type="float">10000</elastic-constant>
-          <weight-per-m-kg-m type="float">1</weight-per-m-kg-m>
-          <dist type="float">1</dist>
-          <connected-to-property-node type="bool"></connected-to-property-node>
-          <brake-force type="float">100000</brake-force>
-          <connected-to-ai-or-mp-callsign type ="string">*</connected-to-ai-or-mp-callsign>
-          <end-force-x type ="float">0</end-force-x>
-          <end-force-y type ="float">0</end-force-y>
-          <end-force-z type ="float">0</end-force-z>
-        </tow>
-        <speed-in-tow-direction type="float">0</speed-in-tow-direction>
-        <open type="bool">true</open>
-        <local-pos-x type="float">0</local-pos-x>
-        <local-pos-y type="float">0</local-pos-y>
-        <local-pos-z type="float">0</local-pos-z>
-        <is-slave type="bool">false</is-slave>
-      </aerotow>
-    </hitches>
+    <hitches include="hitches.xml"/>
     
-    <help include="Systems/help.xml"/>
+    <help include="help.xml"/>
     
-    <menubar include="Dialogs/ask21mi-menu.xml"/>
+    <menubar include="../Dialogs/ask21mi-menu.xml"/>
     
   </sim>
   
-  <input include="Systems/ask21mi-keyboard.xml"/>
+  <input include="ask21mi-keyboard.xml"/>
   
-  <controls>
-    <winch>
-      <place type="bool">false</place>
-    </winch>
-    <aerotow>
-      <find-aircraft type="bool">false</find-aircraft>
-    </aerotow>
-  </controls>
+  <controls include="controls.xml"/>
   
   <nasal>
     <doors>

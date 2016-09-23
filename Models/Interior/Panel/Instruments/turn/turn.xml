@@ -37,8 +37,8 @@
   <animation>
     <type>rotate</type>
     <object-name>needle</object-name>
-    <property>instrumentation/turn-indicator/indicated-turn-rate</property>
-    <factor> 20 </factor>
+    <property>/instrumentation/turn-indicator/indicated-turn-rate</property>
+    <factor> 8 </factor>
     <axis>
       <x> -1 </x>
       <y>  0 </y>
@@ -49,7 +49,7 @@
   <animation>
     <type>rotate</type>
     <object-name>ball</object-name>
-    <property>instrumentation/slip-skid-ball/indicated-slip-skid</property>
+    <property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
     <factor> 21 </factor>
     <min-deg> -19 </min-deg>
     <max-deg>  19 </max-deg>

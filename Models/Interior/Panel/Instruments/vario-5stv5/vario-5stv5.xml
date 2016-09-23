@@ -37,8 +37,8 @@
     <object-name>Needle</object-name>
     <property>/instrumentation/variometer/te-reading-mps</property>
     <interpolation>
-      <entry><ind>-6.33</ind><dep> -171</dep></entry>
-      <entry><ind> 6.33</ind><dep>  171</dep></entry>
+      <entry><ind> -6.33 </ind><dep> -171 </dep></entry>
+      <entry><ind>  6.33 </ind><dep>  171 </dep></entry>
     </interpolation>     
     <axis>
       <x> -1 </x>
@@ -51,7 +51,6 @@
     <type>rotate</type>
     <object-name>mc-cready</object-name>
     <property>/instrumentation/mc-cready/rot</property>
-    <factor>1</factor>
     <axis>
       <x> -1 </x>
       <y>  0 </y>

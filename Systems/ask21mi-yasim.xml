@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Schleicher ASK 21 Mi : BARANGER Emmanuel (12/2008)
+                  Updated : BARANGER Emmanuel (08/2016)
+                          
+     sources         : http://www.alexander-schleicher.de/en/flugzeuge/ask-21-mi/
+
+     Wingspan        : 17.00 m     (  55 ft 70 in )
+     Lenght          :  8.35 m     (  24 ft 70 in )
+     Height          :  1.55 m     (   5 ft 08 in )
+     Empty mass      :   360 kg    ( 794 lb       )
+     Stall speed     :    62 km/h  (  33 kt       )
+     Maxspeed        :   280 km/h  ( 151 kt       )
+     Engine          : IAE R50-AA rotary
+-->
+<airplane mass="794" version="YASIM_VERSION_CURRENT">
+
+  <approach speed="33" aoa="2" glide-angle="2">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture"  value="0.65"/>
+  </approach>
+
+  <cruise speed="140" alt="5000" glide-angle="6">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.7"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="0.65"/>
+  </cruise>
+
+  <cockpit x="2.63" y="0" z="-0.17"/>
+  
+  <!-- Fuselage -->
+  <fuselage ax=" 4.177" ay="0" az="-0.648" bx=" 3.508" by="0" bz="-0.557" width="0.542" taper="0.20" midpoint="1"/>
+  <fuselage ax=" 3.552" ay="0" az="-0.557" bx=" 2.360" by="0" bz="-0.549" width="0.723" taper="0.75" midpoint="1"/>
+  <fuselage ax=" 2.360" ay="0" az="-0.549" bx=" 0.398" by="0" bz="-0.390" width="0.723" taper="0.80" midpoint="0"/>
+  <fuselage ax=" 0.398" ay="0" az="-0.390" bx="-3.803" by="0" bz="-0.390" width="0.578" taper="0.20" midpoint="0"/>
+
+  <!-- Cockpit -->
+  <fuselage ax=" 3.552" ay="0" az="-0.557" bx=" 2.304" by="0" bz="-0.304" width="0.723" taper="0.75" midpoint="1"/>
+  <fuselage ax=" 2.386" ay="0" az="-0.304" bx=" 0.394" by="0" bz="-0.343" width="0.723" taper="0.80" midpoint="0"/>
+  
+  <wing x="0.824" y="0" z="-0.322"
+        chord="1.445"
+        length="8.492"
+        taper="0.33"
+        camber="0.004"
+        sweep="-3"
+        dihedral="3.52">
+        <stall   aoa="28"     width="1"  peak="1.5"/>
+        <flap0   start="0.61" end="0.94" lift="1.2" drag="1.1"/>
+        <spoiler start="0.32" end="0.49" lift="-2" drag="15.5"/>
+
+        <control-input  control="FLAP0"   axis="/controls/flight/aileron" split="true"/>
+        <control-input  control="FLAP0"   axis="/controls/flight/aileron" split="true"/>
+        <control-input  control="SPOILER" axis="/controls/flight/spoilers"/>
+
+        <control-output control="SPOILER" prop="/surface-positions/speedbrake-pos-norm"/>
+        <control-output control="FLAP0"   side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP0"   side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+
+        <control-speed  control="FLAP0"   transition-time="0.8"/>
+        <control-speed  control="FLAP0"   transition-time="0.5"/>
+        <control-speed  control="SPOILER" transition-time="1.5"/>
+  </wing>
+
+  <hstab x="-3.656" y="0" z="0.813"
+         chord="0.792"
+         length="1.554"
+         taper="0.56"> 
+         <stall aoa="26"  width="1"  peak="1.5"/>
+         <flap0 start="0" end="1"    lift="1.2" drag="1.1"/>
+
+         <control-input  control="FLAP0" axis="/controls/flight/elevator"/>
+         <control-input  control="FLAP0" axis="/controls/flight/elevator-trim"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+  <vstab x="-3.601" y="0" z="-0.444"
+         chord="1.185"
+         length="1.255"
+         sweep="8"
+         taper="0.64">
+         <stall aoa="24"  width="1"  peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.2" drag="1.1"/>
+
+         <control-input  control="FLAP0" axis="/controls/flight/rudder" square="true" invert="true"/>
+         <control-input  control="FLAP0" axis="/controls/flight/rudder-trim" invert="true"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
+  </vstab>
+
+  <!-- Engines   source            : http://www.alexander-schleicher.de/en/flugzeuge/ask-21-mi/
+                                     https://en.wikipedia.org/wiki/Austro_Engine_AE50R
+
+                 name              : IAE 50R-AA
+                 type              : Rotary engine
+                 power cruise      :   56 hp
+                 power maximum     : 1600 hp at 3300 rpm at 25000 ft ( 7620 m )
+                 weight            : 28 kg ( 61.7 lb )
+                 compression       : 9:1
+                 Displacement      : 294 cc (17.9 cu in)
+  -->
+  <propeller x="0.293" y="0.0" z="0.584" 
+             mass="61.7" 
+             moment="2.25"
+             radius="0.625"
+             cruise-speed="140"
+             cruise-rpm="7000"
+             cruise-alt="5000" 
+             cruise-power="50"
+             takeoff-power="56" 
+             takeoff-rpm="77500">
+             <actionpt x="0.388" y="0.0" z="0.716"/>
+             <piston-engine eng-rpm="7750" 
+                            eng-power="56"
+                            displacement="294" 
+                            compression="9.1">
+                            <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle" />
+                            <control-input control="STARTER" axis="/controls/engines/engine[0]/starter" />
+                            <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos" />
+                            <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture" />
+             </piston-engine>
+  </propeller>
+  
+  <!-- nose wheel -->
+  <gear x="3.235" y="0" z="-0.965"
+        compression="0.1"
+        spring="1.2"
+        damp="2" 
+        dfric="1"
+        sfric="1">
+  </gear>
+
+  <!-- main wheel-->
+  <gear x="0.975" y="0" z="-1.034"
+        compression="0.1"
+        spring="1.8"
+        damp="1.5" 
+        dfric="1"
+        sfric="1">
+        <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  </gear>
+
+  <!-- Tail wheel -->
+  <gear x="-3.585" y="0" z="-0.573"
+        compression="0.1"
+        spring="1"
+        damp="2" 
+        dfric="0.2"
+        sfric ="0.24">
+    </gear>
+
+  <!--lef wing skid-->
+  <gear x="1.386" y="8.482" z="0.068"
+        compression="0.1"
+        spring="1.8"
+        damp="0.03" 
+        on-solid="1">
+  </gear>
+  
+  <gear x="1.094" y="8.478" z="0.068"
+        compression="0.1"
+        spring="1.8"
+        damp="0.03" 
+        on-solid="1">
+  </gear>
+
+  <!--right wing skid-->
+  <gear x="1.386" y="-8.482" z="0.068"
+        skid="1"
+        compression="0.1"
+        spring="1.8"
+        damp="0.03" 
+        on-solid="1">
+  </gear>
+  
+  <gear x="1.094" y="-8.478" z="0.068"
+        skid="1"
+        compression="0.1"
+        spring="1.8"
+        damp="0.03" 
+        on-solid="1">
+  </gear>
+
+  <!-- pilots -->
+  <ballast x="2.687" y="0" z="-0.400" mass="140"/>
+  <ballast x="1.819" y="0" z="-0.247" mass="140"/>
+  
+  <!-- hitch -->
+  <hitch name="winch" 
+         x="4.177" y="0" z="-0.648">
+    <tow length="51" 
+         weight-per-meter="0.1"
+         elastic-constant="40000" 
+         break-force="10000"/>
+    <!-- 4.5mm steel wire-->
+    <winch max-tow-length="1000" 
+           min-tow-length="1" 
+           initial-tow-length="1000" 
+           max-winch-speed="40" 
+           power="150" 
+           max-force="6000"/>
+    <control-input axis="/controls/winch/place" control="PLACEWINCH"/>
+  </hitch>
+
+  <hitch name="aerotow" 
+         x="4.177" y="0" z="-0.648"
+         force-is-calculated-by-other="0">
+    <tow length="60" 
+         weight-per-meter="0.035" 
+         elastic-constant="9000" 
+         break-force="10000" 
+         mp-auto-connect-period="0.0"/>
+    <winch max-tow-length="1000" 
+           min-tow-length="60" 
+           initial-tow-length="60"/>
+    <control-input axis="/controls/aerotow/find-aircraft" control="FINDAITOW"/>
+  </hitch>
+  
+  <!-- Réservoir de 26 litres de carburant -->
+  <tank x="0" y="0" z="0" capacity="40.20"/>
+  
+</airplane>
