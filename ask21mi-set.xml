@@ -12,6 +12,20 @@
     
     <flight-model>yasim</flight-model>
     <aero>Systems/ask21mi-yasim</aero>
+
+    <tags>
+      <tag>schleicher</tag>
+      <tag>mid-wing</tag>
+      <tag>tail-dragger</tag>
+      <tag>fixed-gear</tag>
+      <tag>glider</tag>
+      <tag>single-engine</tag>
+      <tag>piston</tag>
+      <tag>t-tail</tag>
+      <tag>1980s</tag>
+      <tag>1990s</tag>
+      <tag>2000s</tag>
+    </tags>
     
     <rating>
      <FDM type="int">     3 </FDM>
